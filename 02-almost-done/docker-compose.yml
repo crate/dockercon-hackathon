@@ -22,7 +22,7 @@ aggregate:
     - CRATE_HOST=crate
 
 grafana:
-  image: grafana/grafana
+  image: grafana/grafana:4.5.2
   volumes:
     - './grafana_data/grafana.db:/var/lib/grafana/grafana.db'
   ports:
