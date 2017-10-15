@@ -116,3 +116,8 @@ folder which you can use to train machine learning models.
 
 * Docker introduced an problem with the CrateDB adapter in which objects columns are not escaped properly.
 * I fixed the Grafana Version to 4.5.2. Use the latest docker compose yml in this repo.
+
+
+### How do I create an CrateDB cluster with Docker?
+
+* Follow the instructions in our documentation: https://crate.io/docs/crate/guide/en/latest/best_practices/docker.html#creating-a-cluster
