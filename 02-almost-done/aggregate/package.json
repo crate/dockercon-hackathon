@@ -1,0 +1,35 @@
+{
+  "name": "demo-docker-con-aggregate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "nodemon src/app.js --exec babel-node --presets es2015,stage-3",
+    "build": "babel src -d dist ",
+    "debug": "nodemon --inspect --watch src --exec babel-node --presets es2015,stage-3 src/app.js",
+    "serve": "node dist/app.js",
+    "test": "mocha --compilers js:babel-register",
+    "deploy": "git pull && npm install && npm run build"
+  },
+  "author": "Thomas Vogel <toms.vogel@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "babel-register": "^6.22.6",
+    "eslint": "^3.13.1",
+    "eslint-plugin-babel": "^4.0.0",
+    "nodemon": "^1.10.0"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "dotenv": "^4.0.0",
+    "moment": "^2.18.1",
+    "node-crate": "^2.0.3"
+  }
+}

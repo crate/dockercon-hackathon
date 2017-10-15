@@ -1,0 +1,84 @@
+{
+  "plugins": [
+    "babel"
+  ],
+  "parserOptions": {
+    "allowImportExportEverywhere": 1,
+    "sourceType": "module",
+    "ecmaVersion": 2017
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "arrowFunctions": true,
+    "modules": false,
+    "class": true
+  },
+  "env": {
+    "amd": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "comma-dangle": 1,
+    "no-undef": 1,
+    "strict": 2,
+    "no-extra-semi": 1,
+    "no-underscore-dangle": 0,
+    "no-console": 0,
+    "no-unused-vars": 1,
+    "no-unreachable": 1,
+    "no-alert": 0,
+    "brace-style": [
+      2,
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "comma-spacing": 2,
+    "eol-last": 2,
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "key-spacing": [
+      2,
+      {mode: minimum
+      }
+    ],
+    "linebreak-style": [
+      2, unix
+    ],
+    "max-len": [
+      1,
+      120,
+      2
+    ],
+    "new-parens": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-multiple-empty-lines": [
+      2,
+      {max: 2
+      }
+    ],
+    "no-trailing-spaces": 2,
+    "quotes": [
+      2, single, avoid-escape
+    ],
+    "semi": 2,
+    "space-before-blocks": [
+      2, always
+    ],
+    "space-before-function-paren": [
+      2, never
+    ],
+    "space-in-parens": [
+      2, never
+    ],
+    "space-infix-ops": 2,
+    "space-unary-ops": 2
+  }
+}

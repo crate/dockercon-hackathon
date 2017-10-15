@@ -1,0 +1,34 @@
+crate:
+  image: 'crate/crate:2.2.0'
+  ports:
+    - '4200:4200'
+    - '4300:4300'
+  volumes:
+    - './crateDB_data:/data'
+    - './exports/good:/tmp/good'
+    - './exports/error:/tmp/error'
+  command: crate -Cingestion.mqtt.enabled=true -Clicense.ident=DOCKER-DEMO-FE291C3
+
+bridge:  
+  build: ./bridge
+  links:
+    - crate
+aggregate:
+  build: ./aggregate
+  links:
+    - bridge 
+    - crate
+  environment:
+    - CRATE_HOST=crate
+
+grafana:
+  image: grafana/grafana
+  volumes:
+    - './grafana_data/grafana.db:/var/lib/grafana/grafana.db'
+  ports:
+    - '3000:3000'
+  environment: 
+    - GF_INSTALL_PLUGINS=crate-datasource
+  links:
+    - crate
+
