@@ -96,3 +96,23 @@ folder which you can use to train machine learning models.
 * Grafana: https://hub.docker.com/r/grafana/grafana/
 * Mosquitto Pub: https://mosquitto.org/man/mosquitto_pub-1.html
 * Mosquitto Sub: https://mosquitto.org/man/mosquitto_sub-1.html
+
+## FAQ
+
+### How to change the structure of the Aggregation tables:
+
+* Create a table with a different structure.
+* You can show the create table statement of the current table by running: `show create table sgmdata_aggregated;`
+* This should be done here: https://github.com/crate/dockercon-hackathon/blob/master/02-almost-done/aggregate/src/app.js#L50-L66
+
+
+### How do I add an additional Grafana Plugin?
+
+* Add it comma seperated to that line: https://github.com/crate/dockercon-hackathon/blob/master/02-almost-done/docker-compose.yml#L31
+* A list of Grafana plugins can be found here: https://grafana.com/plugins
+
+
+### When I add an additional metric to the Grafana Dashboard an error is shown?
+
+* Docker introduced an problem with the CrateDB adapter in which objects columns are not escaped properly.
+* I fixed the Grafana Version to 4.5.2. Use the latest docker compose yml in this repo.
